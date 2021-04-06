@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "RZ.FSharp.Akka.Streams", "src\RZ.FSharp.Akka.Streams.fsproj", "{0A738A70-B611-4D56-B23A-1237B6B82695}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DAEA2E13-A41A-4CA1-9F2B-B1EE7122A8E5}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A738A70-B611-4D56-B23A-1237B6B82695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A738A70-B611-4D56-B23A-1237B6B82695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A738A70-B611-4D56-B23A-1237B6B82695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A738A70-B611-4D56-B23A-1237B6B82695}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {09D825F1-D31E-4A94-A1B7-D3C268195ED4}
+	EndGlobalSection
+EndGlobal
