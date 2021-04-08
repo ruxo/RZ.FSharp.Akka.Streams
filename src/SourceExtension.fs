@@ -5,7 +5,6 @@ open System.Threading.Tasks
 open Akka.Streams
 open Akka.Streams.Dsl
 open System.Collections.Generic
-open System.Runtime.InteropServices
 open Akka.Event
 
 type Source<'Out,'Mat> with
@@ -92,16 +91,16 @@ type Source<'Out,'Mat> with
         this.RecoverWithRetries((fun ex -> partialFuncs ex), attempt)
 
     member inline this.runAggregate(zero: 'Result, mapper: 'Result -> 'Out -> 'Result, materializer) =
-        this.RunAggregate(zero, (fun last item -> mapper last item), materializer)
+        async { return! this.RunAggregate(zero, (fun last item -> mapper last item), materializer) |> Async.AwaitTask }
 
     member inline this.runAggregateAsync(zero: 'Result, mapper: 'Result -> 'Out -> Task<'Result>, materializer) =
-        this.RunAggregateAsync(zero, (fun last item -> mapper last item), materializer)
+        async { return! this.RunAggregateAsync(zero, (fun last item -> mapper last item), materializer) |> Async.AwaitTask }
 
     member inline this.runForeach(action: 'Out -> unit, materializer) =
-        this.RunForeach((fun result -> action result), materializer)
+        async { return! this.RunForeach((fun result -> action result), materializer) |> Async.AwaitTask }
 
     member inline this.runSum(reduce: 'Out -> 'Out -> 'Out, materializer) =
-        this.RunSum((fun last item -> reduce last item), materializer)
+        async { return! this.RunSum((fun last item -> reduce last item), materializer) |> Async.AwaitTask }
 
     member inline this.select(mapper: 'Out -> 'c) =
         this.Select(fun x -> mapper(x))

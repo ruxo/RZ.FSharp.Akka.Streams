@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Source.fs" />
+    <Compile Include="SourceExtension.fs" />
+    <Compile Include="SourceModule.fs" />
   </ItemGroup>
 
   <ItemGroup>
